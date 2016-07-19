@@ -1,0 +1,99 @@
+Using Terminal (or Command Prompt for Windows)
+by Perry R. Cook, October 2015
+
+For much of the code used in this course, you can work in
+miniAudicle (ChucK’s Integrated Development Environment
+(IDE) and editor).  But for the PONG animation+sound code, 
+
+You should run these programs in a Terminal shell window
+(Mac, LINUX) or Command Prompt (DOS box) Window.  
+
+On a Mac, the Terminal lives in 
+/Applications/Utilities/Terminal.app
+
+On Linux, Under System Tools or Accessories, you should
+find a program called Terminal.  There might be many 
+different types of shells and terminals,  If you're a 
+Linux-type, you very likely already have your favorite.
+
+On Windows, find and run Start/AllPrograms/Accessories,
+Command Prompt.  Or, use find (Search this PC) to 
+locate and launch Command.com or Command Prompt.
+Windows 8:  Swipe up to Apps screen, search for 
+Command, pick one Command Prompt (mostly shortcuts,
+any is probably fine) and launch it.
+
+Anyway, somehow create a Terminal/Prompt, then type 
+(on Mac or Linux):
+
+ls 
+
+followed by a carriage return (ls means "list")
+
+or in Windows, type:
+
+dir
+
+with carriage return (dir means "directory")
+
+This lists all the files that terminal can see right now.
+
+Now type:
+
+cd ..
+
+which takes you up one level in the directory structure
+
+cd FolderName 
+
+takes you into the folder/directory named FolderName
+
+You can execute files from the Terminal, and do much
+more, like rename, move, etc.
+
+More Terminal/Command Prompt commands:
+
+<ctrl>-c   (that means pressing and holding the Control key,
+and adding the "c" key so they're both held down at the same time)
+
+Control-c is your friend, because it stops any program that
+that you started/ran from the Terminal.  Many ChucK demos 
+are infinite loops, so you'll use <ctrl>-c to stop them
+when you're tired of it.
+
+Command:			what it does:
+
+cd ..				go up one directory level 
+cd ../..			go up two directory levels
+ls -l				long listing (Mac/Linux file size, dates, etc)
+dir 				long listing (Windows)
+cp filename1 filename2		copy (duplicate) filename1 to filename2
+rm filename			remove/delete file (Mac/Linux  BE CAREFUL!!!)
+del filename			remove/delete file (Windows    BE CAREFUL!!!)
+mv filename filename/path	move or rename arg1 to arg2 (Mac/Linux)
+move filename filename/path	move arg1 to arg2 (Windows)
+pwd				print current directory (Mac/Linux)
+more filename			show contents of text file, example:
+
+	more PONG 
+
+	displays:
+
+	chuck PongPhysics1.ck | ./PongViewGL
+
+<anycommand>/?			Windows only, adding /? lists all options
+
+man <anycommand>		Mac/Linux, man means “manual”, prints description
+
+
+TO LEARN MORE:  See “Appendix G, ChucK on the Command Line”
+from the book:  “Programming for Musicians and Digital Artists
+			Creating music with ChucK”
+by Ajay Kapur, Perry Cook, Spencer Salazar, and Ge Wang
+
+OR:  Just Google things like “Terminal Commands Linux” or
+			     “Terminal Commands Mac OSX” or
+			     “Command Prompt Commands Windows”
+
+END
+

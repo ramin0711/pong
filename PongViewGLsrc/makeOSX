@@ -1,0 +1,2 @@
+gcc -w -O3 -DOSX -framework OpenGL -framework GLUT -framework Foundation -o PongViewGL PongViewGL.c 
+
