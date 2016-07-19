@@ -1,7 +1,17 @@
 // PongPhysics1.ck   by Perry R. Cook  2015
+// And me Ramin Anushiravani
 // Simple physics of bouncing ball in a 
-//    square  box.  One peg in center.
-//  Collisions trigger sounds.  
+// square  box.  One peg in center.
+// Collisions trigger sounds.  
+// I've added codes to change the radius of the cirble
+// as well its accelation and pitch randomly 
+// I tried to make the sound as related to
+// it's accelration and speed by changing its gain and pitch.
+// I used a piano note and repeating piano note, I thought it would
+// be cool to make music with the ball bouncing, I guess
+// for a more interesting music, I would need to add more
+// constraints on the ball behaviour
+
 
 // Simple Ball object with physics variables
 class Ball {
@@ -42,26 +52,31 @@ while (now < then)   {
     drawBall(1,ball);
     if (checkLeftRightWalls(ball)) {
         ball.x => pan.pan;  // pan is set by position
-        soundBall(ball.ax*ball.dy+ball.dx);
+        soundBall(ball.ax*ball.dy+ball.dx); 
+        //I'm adding random numbers to change the gain
         ballSound.rate()+ball.dy => ballSound.rate;
+        // changing the pitch
         Math.random2f(0.01,0.03) => ball.r;
+        // changing the radius
     }
     if (checkTopBottomWalls(ball)) {
-        //ball.x => pan.pan;
-        //soundBall(ball.dy);
-        //ballSound.rate() => ballSound.rate;  // play backward!!
-        //ballSound.samples() => ballSound.pos;
         ballSound.samples() => ballSound.pos;
-        ball.ay => pan.pan;  // pan is set by position
+        ball.ay => pan.pan;  
+        // pan is set by position
         ball.dx*ballSound.rate()+ball.dy/ball.ay => ballSound.rate;
+        //changing te rate by a complex nonsense relation!
         soundBall(ball.dy);
         Math.random2f(0.001,0.1) => ball.r;
+        //change radius
         Math.random2f(-0.001,0.01) => ball.ay;
+        //change accelration
     }   
     if (checkBallPegCollide(ball,peg)) {
         soundPeg(ball.dx+ball.dy-ball.ay);
         Math.random2f(0.03,0.3) => ball.r;
+        //change radius
         Math.random2f(-0.009,0.02) => ball.ax;
+        // change acceleration
 
     }
     33*ms => now;  // 30 frames (roughly) per second
